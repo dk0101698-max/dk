@@ -3,6 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Generate experience content
     function generateExperienceContent() {
+        // Calculate total height needed based on experience data
+        const baseHeight = 150; // Starting position for first item
+        const itemSpacing = 250; // Space between items
+        const extraSpace = 300; // Extra space after last checkpoint
+        const totalHeight = baseHeight + (experienceData.length - 1) * itemSpacing + extraSpace;
+        
+        // Set the content height dynamically
+        experienceContent.style.height = `${totalHeight}px`;
+        
         // Create robot container
         const robotContainer = document.createElement('div');
         robotContainer.className = 'robot-container';
@@ -93,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create extra space
         const extraSpace = document.createElement('div');
         extraSpace.className = 'extra-space';
+        extraSpace.style.height = '300px'; // Set explicit height for extra space
         experienceContent.appendChild(extraSpace);
 
         // Initialize experience timeline

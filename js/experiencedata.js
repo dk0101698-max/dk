@@ -15,6 +15,13 @@ const experienceData = [{
         title: "Robotic Engineer",
         date: "2023 - present",
         description: "As a robotics engineer at TS Robotics, I played a pivotal role in the development and implementation of cutting-edge robotic systems , and I am a fpv drone pilot.",
-        position: { top: 700 }
+        position: { top: 650 }
     }
 ];
+
+// Auto-calculate positions based on spacing
+experienceData.forEach((item, index) => {
+    const basePosition = 150;
+    const spacing = 250;
+    item.position.top = basePosition + (index * spacing);
+});
